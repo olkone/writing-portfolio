@@ -1,29 +1,37 @@
-* {
-  border: 1px solid transparent;
-}
-
-html {
+html, body {
+  background-color: rgb(250, 247, 245);
   color: rgb(46, 46, 46);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .header {
   align-items: center;
+  background-color: rgb(250, 247, 245);
   display: flex;
   flex-flow: row nowrap;
-  flex: 1;
-  margin: 0 1.5em;
+  flex: auto;
+  margin: 0 1em;
+  padding: 0 1em;
 }
 
 h1 {
+  display: flex;
+  flex: 0;
   font-size: 18px;
+  min-width: max-content;
 }
 
-.header a {
+.header a,
+.header li,
+.header select,
+li button {
   color: rgb(46, 46, 46);
   display: flex;
+  flex: 0 2;
   font-size: 15px;
-  padding: 0 1em;
   text-decoration: none;
 }
 
@@ -33,9 +41,42 @@ a:hover {
 
 .header ul {
   display: flex;
-  flex: 1;
+  flex: auto;
+  gap: 2em;
   justify-content: flex-end;
   list-style: none;
+}
+
+.drop-btn {
+  background-color: rgb(250, 247, 245);
+  border: none;
+  cursor: pointer;
+}
+
+#dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(250, 247, 245);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(46, 46, 46, 0.1);
+}
+
+#dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
