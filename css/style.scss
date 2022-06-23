@@ -1,0 +1,42 @@
+$text-color: rgb(46, 46, 46);
+
+* {
+    border: 1px solid transparent;
+}
+html {
+    color: $text-color;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.header {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    margin: 0 1.5em;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+.header a {
+    color: $text-color;
+    display: flex;
+    font-size: 15px;
+    padding: 0 1em;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header ul {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    list-style: none;
+}
