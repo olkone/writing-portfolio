@@ -74,6 +74,7 @@ a:hover {
     color: $text-color;
     text-decoration: none;
     display: block;
+    padding: .8em 0;
 }
 
 .dropdown-content a:hover {
@@ -81,5 +82,8 @@ a:hover {
 }
 
 #dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
+    padding: .8em 0;
+    width: max-content;
 }

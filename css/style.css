@@ -69,6 +69,7 @@ a:hover {
   color: rgb(46, 46, 46);
   text-decoration: none;
   display: block;
+  padding: 0.8em 0;
 }
 
 .dropdown-content a:hover {
@@ -76,7 +77,10 @@ a:hover {
 }
 
 #dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0.8em 0;
+  width: max-content;
 }
 
 /*# sourceMappingURL=style.css.map */
