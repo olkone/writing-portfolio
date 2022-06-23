@@ -11,8 +11,9 @@ html, body {
   align-items: center;
   background-color: rgb(250, 247, 245);
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   flex: auto;
+  justify-content: space-between;
   margin: 0 1em;
   padding: 0 1em;
 }
@@ -30,7 +31,6 @@ h1 {
 li button {
   color: rgb(46, 46, 46);
   display: flex;
-  flex: 0 2;
   font-size: 15px;
   text-decoration: none;
 }
@@ -39,15 +39,36 @@ a:hover {
   text-decoration: underline;
 }
 
+.header .links {
+  display: flex;
+  flex: 0 1;
+  justify-content: flex-end;
+}
+
 .header ul {
+  align-items: center;
   display: flex;
   flex: auto;
-  gap: 2em;
+  gap: 3em;
   justify-content: flex-end;
   list-style: none;
 }
 
+#contact {
+  margin: 0 0 0 -12px;
+}
+
+#triangle {
+  height: 10px;
+  width: 10px;
+  padding-left: 2px;
+  transform: rotate(90deg);
+  margin: 0 0 1px 0;
+}
+
 .drop-btn {
+  align-items: center;
+  display: flex;
   background-color: rgb(250, 247, 245);
   border: none;
   cursor: pointer;
@@ -55,32 +76,38 @@ a:hover {
 
 #dropdown {
   position: relative;
-  display: inline-block;
+  display: inline;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: rgb(250, 247, 245);
+  transform: translateX(-2.1em);
   z-index: 1;
 }
 
 .dropdown-content a {
   color: rgb(46, 46, 46);
   text-decoration: none;
-  display: block;
-  padding: 0.8em 0;
+  display: flex;
+  padding: 0.8em 0.5em;
 }
 
 .dropdown-content a:hover {
-  background-color: rgba(46, 46, 46, 0.1);
+  transform: translateX(-1em);
 }
 
 #dropdown:hover .dropdown-content {
   display: flex;
   flex-flow: column wrap;
-  padding: 0.8em 0;
-  width: max-content;
+  padding: 0.8em 2em;
+  width: 13em;
+}
+
+#dropdown:hover #triangle {
+  transform: rotate(180deg);
+  margin: 2px 0 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */
