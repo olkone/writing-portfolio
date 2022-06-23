@@ -7,9 +7,14 @@ html, body {
   width: 100%;
 }
 
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .header {
   align-items: center;
-  background-color: rgb(250, 247, 245);
   display: flex;
   flex-flow: row wrap;
   flex: auto;
@@ -82,7 +87,6 @@ a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgb(250, 247, 245);
   transform: translateX(-2.1em);
   z-index: 1;
 }
