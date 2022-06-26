@@ -64,7 +64,7 @@ a:hover {
   list-style: none;
 }
 
-#contact {
+#contact-link {
   margin: 0 0 0 -12px;
 }
 
@@ -121,7 +121,7 @@ a:hover {
   margin: 2px 0 0 0;
 }
 
-#home {
+.home {
   display: flex;
   background-image: url("../images/background.jpg");
   background-color: rgb(250, 247, 245);
@@ -132,7 +132,7 @@ a:hover {
   width: auto;
 }
 
-#home div {
+.home div {
   align-items: center;
   color: rgb(250, 247, 245);
   display: flex;
@@ -145,16 +145,24 @@ a:hover {
   width: 100%;
 }
 
-#home strong {
+.home strong {
   font-size: 82px;
   font-weight: 700;
   margin-top: -2em;
 }
 
+h2 {
+  font-size: 36px;
+  font-weight: 200;
+}
+
+#about,
+#contact,
 #portfolio {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
+  padding: 2em 0 0 0;
   width: 100%;
 }
 
@@ -181,6 +189,19 @@ a:hover {
   height: 14em;
   width: 14em;
   margin: 0 0 1em 0;
+}
+
+.document {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 51px 0 0 0;
+  align-items: center;
+}
+
+.pdf {
+  height: 70em;
+  width: 70%;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
