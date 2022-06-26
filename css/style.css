@@ -192,16 +192,26 @@ h2 {
 }
 
 .document {
+  align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  margin: 51px 0 0 0;
-  align-items: center;
+  gap: 1em;
+  margin: 51px 2.5% 0 2.5%;
 }
 
 .pdf {
-  height: 70em;
-  width: 70%;
+  height: 50em;
+  width: 78%;
   border: none;
+}
+
+.nav {
+  align-items: center;
+  display: inline-flex;
+  flex: 0;
+  justify-content: space-between;
+  min-width: 55%;
+  max-width: 75%;
 }
 
 /*# sourceMappingURL=style.css.map */
