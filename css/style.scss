@@ -22,6 +22,7 @@ html, body {
     top: 0;
     width: 100%;
     box-shadow: 0 4px 10px $shadow-color;
+    z-index: 1;
 }
 
 .header {
@@ -35,23 +36,16 @@ html, body {
 }
 
 h1 {
-    display: flex;
-    flex: 0;
     font-size: 18px;
-    min-width: max-content;
 }
 
-.work-container a,
-.header a, 
-.header li,
-.header select,
-li button {
+.header a {
     color: $text-color;
     display: flex;
     font-size: 15px;
     text-decoration: none;
 }
-.work:hover,
+
 a:hover {
     text-decoration: underline;
 }
@@ -69,63 +63,6 @@ a:hover {
     gap: 3em;
     justify-content: flex-end;
     list-style: none;
-}
-
-#contact-link {
-    margin: 0 0 0 -12px;
-}
-
-#triangle {
-    height: 10px;
-    width: 10px;
-    padding-left: 2px;
-    transform: rotate(90deg);
-    margin: 0 0 1px 0;
-}
-
-.drop-btn {
-    align-items: center;
-    display: flex;
-    background-color: $background-color;
-    border: none;
-    cursor: pointer;
-}
-
-#dropdown {
-    position: relative;
-    display: inline;
-}
-
-.dropdown-content {
-    background-color: $dropdown-color;
-    border-radius: 4px;
-    display: none;
-    position: absolute;
-    transform: translateX(-2.1em);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: $text-color;
-    text-decoration: none;
-    display: flex;
-    padding: .8em .5em;
-}
-
-.dropdown-content a:hover {
-    transform: translateX(-1em);
-}
-
-#dropdown:hover .dropdown-content {
-    display: flex;
-    flex-flow: column wrap;
-    padding: .8em 2em;
-    width: 13em;
-}
-
-#dropdown:hover #triangle {
-    transform: rotate(180deg);
-    margin: 2px 0 0 0;
 }
 
 .home {
@@ -158,8 +95,8 @@ a:hover {
     margin-top: -2em;
 }
 
-h2 {
-    font-size: 36px;
+.home em {
+    font-size: 20px;
     font-weight: 200;
 }
 
@@ -173,50 +110,101 @@ h2 {
     width: 100%;
 }
 
-.work-container {
+#about h2,
+#portfolio h2,
+#contact h2 {
+    background-color: $background-color;
+
+}
+
+.tab-container {
     display: flex;
-    flex-flow: row wrap;
-    gap: 2em 0 4em 0;
-    justify-content: space-evenly;
+    flex: 1;
+    flex-flow: row nowrap;
+    height: 50em;
+    width: 90%;
+    margin: 0 1em;
+}
+
+.tabs {
+    background-color: rgb(114, 115, 119);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 50em;
+    position: relative;
     width: 100%;
 }
 
-.work {
-    align-items: center;
+.tabs::before,
+.tabs::after {
+    content: "";
+}
+
+.tabs::after {
+    clear: both;
+}
+
+.tab {
     display: flex;
     flex: 0;
-    flex-flow: column nowrap;
-    margin: 2em 0;
+    justify-content: flex-start;
+    float: left;
+    height: auto;
+    width: 12em;
 }
 
-.work img {
-    border-radius: 4px;
-    display: flex;
-    flex: 1;
-    height: 14em;
-    width: 14em;
-    margin: 0 0 1em 0;
+.tab-switch {
+    display: none;
 }
 
-.document {
+.tab-label {
     align-items: center;
     display: flex;
-    flex-flow: column nowrap;
-    gap: 1em;
-    margin: 51px 2.5% 0 2.5%;
-}
+    flex-wrap: wrap;
+    height: 3em;
+    padding: .8em;
+    top: 0;
+    background: rgb(46, 46, 46);
+    border-bottom: 0.125rem solid rgb(35, 35, 35);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.07s;
+    width: 100%;
+  }
+  .tab-label:hover {
+    background-color: rgb(67, 67, 67);
 
-.pdf {
+  }
+  .tab-content {
+    display: block;
+    position: absolute;
+    transform: translateX(12em);
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    color: #2c3e50;
+    transition: all 0.07s;
+    width: 82%;
+  }
+
+  .pdf {
     height: 50em;
-    width: 78%;
+    width: 100%;
     border: none;
 }
 
-.nav {
-    align-items: center;
-    display: inline-flex;
-    flex: 0;
-    justify-content: space-between;
-    min-width: 55%;
-    max-width: 75%;
-}
+  .tab-switch:checked + .tab-label {
+    background: #fff;
+    color: #2c3e50;
+    border-bottom: 0.125rem solid #fff;
+    transition: all 0.07s;
+    z-index: 0;
+  }
+  .tab-switch:checked + label + .tab-content {
+    z-index: 0;
+    opacity: 1;
+    transition: all 0.07s;
+  }

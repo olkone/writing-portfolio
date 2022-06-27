@@ -15,23 +15,8 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./#about">About</a></li>
-                    <li id="dropdown">
-                        <button class="drop-btn">
-                            <a href="./#portfolio">Portfolio</a>
-                            <img id="triangle" src="./images/triangle.png" alt="triangle icon">
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="./pages/concept.html">Concept Document</a>
-                            <a href="./pages/how-to.html">How-To Document</a>
-                            <a href="./pages/proposal.html">Proposal</a>
-                            <a href="./pages/data.html">Data Report</a>
-                            <a href="./pages/recommendation.html">Recommendation Report</a>
-                            <a href="./pages/guidance.html">Guidance Document</a>
-                            <a href="./pages/user-guide.html">User Guide</a>
-                            <a href="./pages/technical.html">Technical Article</a>
-                        </div>
-                    </li>
-                    <li id="contact-link"><a href="./#contact">Contact</a></li>
+                    <li><a class="drop-btn"><a href="./#portfolio">Portfolio</a></li>
+                    <li><a href="./#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -50,42 +35,82 @@
 
     <div id="portfolio">
         <h2>Portfolio</h2>
-        <div class="work-container">
-            <div class="work">
-                <a href="./pages/concept.html"><img src="./images/concept.jpg" alt="Concept"></a>
-                <a href="./pages/concept.html">Concept Document</a>
-            </div>
-            <div class="work">
-                <a href="./pages/how-to.html"><img src="./images/how-to.jpg" alt="How-to"></a>
-                <a href="./pages/how-to.html">How-To Document</a>
-            </div>
-            <div class="work">
-                <a href="./pages/proposal.html"><img src="./images/proposal.jpg" alt="Proposal"></a>
-                <a href="./pages/proposal.html">Proposal</a>
-            </div>
-            <div class="work">
-                <a href="./pages/data.html"><img src="./images/data.jpg" alt="Data report"></a>
-                <a href="./pages/data.html">Data Report</a>
-            </div>
-        </div>
-        <div class="work-container">
-            <div class="work">
-                <a href="./pages/recommendation.html"><img src="./images/rec.jpg" alt="Recommendation"></a>
-                <a href="./pages/recommendation.html">Recommendation Report</a>
-            </div>
-            <div class="work">
-                <a href="./pages/guidance.html"><img src="./images/guidance.jpg" alt="Guidance"></a>
-                <a href="./pages/guidance.html">Guidance Document</a>
-            </div>
-            <div class="work">
-                <a href="./pages/user-guide.html"><img src="./images/user-guide.jpg" alt="User guide" href="./pages/user-guide.html"></a>
-                <a href="./pages/user-guide.html">User Guide</a> 
+        <div class="tab-container">
+            <div class="tabs">
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab1" checked class="tab-switch" data-page="concept-document">
+                    <label for="tab1" class="tab-label">Concept Document</label>
+                    <div class="tab-content" id="concept-document">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
                 </div>
-            <div class="work">
-                <a href="./pages/technical.html"><img src="./images/tech.jpg" alt="Technical article"></a>
-                <a href="./pages/technical.html">Technical Article</a>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab2" checked class="tab-switch" data-page="how-to-document">
+                    <label for="tab2" class="tab-label">How-To Document</label>
+                    <div class="tab-content" id="how-to-document">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab3" checked class="tab-switch" data-page="proposal">
+                    <label for="tab3" class="tab-label">Proposal</label>
+                    <div class="tab-content" id="proposal">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab4" checked class="tab-switch" data-page="data-report">
+                    <label for="tab4" class="tab-label">Data Report</label>
+                    <div class="tab-content" id="data-report">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab5" checked class="tab-switch" data-page="recommendation-report">
+                    <label for="tab5" class="tab-label">Recommendation Report</label>
+                    <div class="tab-content" id="recommendation-report">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab6" checked class="tab-switch" data-page="guidance-document">
+                    <label for="tab6" class="tab-label">Guidance Document</label>
+                    <div class="tab-content" id="guidance-document">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab7" checked class="tab-switch" data-page="user-guide">
+                    <label for="tab7" class="tab-label">User Guide</label>
+                    <div class="tab-content" id="user-guide">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab8" checked class="tab-switch" data-page="technical-article">
+                    <label for="tab8" class="tab-label">Technical Article</label>
+                    <div class="tab-content" id="technical-article">
+                        <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                        </iframe>
+                    </div>
+                </div>
+    
             </div>
-        </div>
     </div>
     <div id="contact">
         <h2>Contact</h2>

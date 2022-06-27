@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Portfolio</title>
+    <script src="./portfolio.js"></script>
+</head>
+<body>
+    <div class="fixed-header">
+        <div class="header">
+            <h1>Julia</h1>
+            <div class="links">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./#about">About</a></li>
+                    <li id="dropdown">
+                        <button class="drop-btn">
+                            <a href="./#portfolio">Portfolio</a>
+                            <img id="triangle" src="./images/triangle.png" alt="triangle icon">
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./concept.html">Concept Document</a>
+                            <a href="./how-to.html">How-To Document</a>
+                            <a href="./proposal.html">Proposal</a>
+                            <a href="./data.html">Data Report</a>
+                            <a href="./recommendation.html">Recommendation Report</a>
+                            <a href="./guidance.html">Guidance Document</a>
+                            <a href="./user-guide.html">User Guide</a>
+                            <a href="./technical.html">Technical Article</a>
+                        </div>
+                    </li>
+                    <li id="contact-link"><a href="./#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container">
+        <div class="tabs">
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab1" checked class="tab-switch" data-page="concept-document">
+                <label for="tab1" class="tab-label">Concept Document</label>
+                <div class="tab-content" id="concept-document">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab2" checked class="tab-switch" data-page="how-to-document">
+                <label for="tab2" class="tab-label">How-To Document</label>
+                <div class="tab-content" id="how-to-document">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab3" checked class="tab-switch" data-page="proposal">
+                <label for="tab3" class="tab-label">Proposal</label>
+                <div class="tab-content" id="proposal">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab4" checked class="tab-switch" data-page="data-report">
+                <label for="tab4" class="tab-label">Data Report</label>
+                <div class="tab-content" id="data-report">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab5" checked class="tab-switch" data-page="recommendation-report">
+                <label for="tab5" class="tab-label">Recommendation Report</label>
+                <div class="tab-content" id="recommendation-report">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab6" checked class="tab-switch" data-page="guidance-document">
+                <label for="tab6" class="tab-label">Guidance Document</label>
+                <div class="tab-content" id="guidance-document">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab7" checked class="tab-switch" data-page="user-guide">
+                <label for="tab7" class="tab-label">User Guide</label>
+                <div class="tab-content" id="user-guide">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab8" checked class="tab-switch" data-page="technical-article">
+                <label for="tab8" class="tab-label">Technical Article</label>
+                <div class="tab-content" id="technical-article">
+                    <iframe class="pdf" src="./docs/lorem-ipsum.pdf">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
