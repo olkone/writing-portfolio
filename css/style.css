@@ -6,14 +6,19 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 .fixed-header {
+  display: flex;
+  align-items: center;
   background-color: rgb(250, 247, 245);
   position: fixed;
   top: 0;
+  height: 51px;
   width: 100%;
   box-shadow: 0 4px 10px rgba(46, 46, 46, 0.2);
+  z-index: 2;
 }
 
 .header {
@@ -26,25 +31,17 @@ html, body {
   padding: 0 1em;
 }
 
-h1 {
-  display: flex;
-  flex: 0;
+#head-name {
   font-size: 18px;
-  min-width: max-content;
 }
 
-.work-container a,
-.header a,
-.header li,
-.header select,
-li button {
+.header a {
   color: rgb(46, 46, 46);
   display: flex;
   font-size: 15px;
   text-decoration: none;
 }
 
-.work:hover,
 a:hover {
   text-decoration: underline;
 }
@@ -64,64 +61,7 @@ a:hover {
   list-style: none;
 }
 
-#contact-link {
-  margin: 0 0 0 -12px;
-}
-
-#triangle {
-  height: 10px;
-  width: 10px;
-  padding-left: 2px;
-  transform: rotate(90deg);
-  margin: 0 0 1px 0;
-}
-
-.drop-btn {
-  align-items: center;
-  display: flex;
-  background-color: rgb(250, 247, 245);
-  border: none;
-  cursor: pointer;
-}
-
-#dropdown {
-  position: relative;
-  display: inline;
-}
-
-.dropdown-content {
-  background-color: rgba(250, 247, 245, 0.75);
-  border-radius: 4px;
-  display: none;
-  position: absolute;
-  transform: translateX(-2.1em);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: rgb(46, 46, 46);
-  text-decoration: none;
-  display: flex;
-  padding: 0.8em 0.5em;
-}
-
-.dropdown-content a:hover {
-  transform: translateX(-1em);
-}
-
-#dropdown:hover .dropdown-content {
-  display: flex;
-  flex-flow: column wrap;
-  padding: 0.8em 2em;
-  width: 13em;
-}
-
-#dropdown:hover #triangle {
-  transform: rotate(180deg);
-  margin: 2px 0 0 0;
-}
-
-.home {
+#home {
   display: flex;
   background-image: url("../images/background.jpg");
   background-color: rgb(250, 247, 245);
@@ -129,10 +69,10 @@ a:hover {
   background-size: cover;
   height: 85%;
   margin: 51px 0 0 0;
-  width: auto;
+  width: 100%;
 }
 
-.home div {
+#home div {
   align-items: center;
   color: rgb(250, 247, 245);
   display: flex;
@@ -145,14 +85,14 @@ a:hover {
   width: 100%;
 }
 
-.home strong {
+#home strong {
   font-size: 82px;
   font-weight: 700;
   margin-top: -2em;
 }
 
-h2 {
-  font-size: 36px;
+#home em {
+  font-size: 20px;
   font-weight: 200;
 }
 
@@ -166,52 +106,105 @@ h2 {
   width: 100%;
 }
 
-.work-container {
+#about h2,
+#portfolio h2,
+#contact h2 {
+  padding: 1em 0 0 0;
+  background-color: rgb(250, 247, 245);
+}
+
+.tab-container {
   display: flex;
-  flex-flow: row wrap;
-  gap: 2em 0 4em 0;
-  justify-content: space-evenly;
+  flex: 1;
+  flex-flow: row nowrap;
+  height: 50em;
+  width: 90%;
+  margin: 0 1em;
+}
+
+.tabs {
+  background-color: rgb(114, 115, 119);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 50em;
+  position: relative;
   width: 100%;
 }
 
-.work {
-  align-items: center;
+.tabs::before,
+.tabs::after {
+  content: "";
+}
+
+.tabs::after {
+  clear: both;
+}
+
+.tab {
   display: flex;
   flex: 0;
-  flex-flow: column nowrap;
-  margin: 2em 0;
+  justify-content: flex-start;
+  float: left;
+  height: auto;
+  width: 12em;
 }
 
-.work img {
-  border-radius: 4px;
-  display: flex;
-  flex: 1;
-  height: 14em;
-  width: 14em;
-  margin: 0 0 1em 0;
+.tab-switch {
+  display: none;
 }
 
-.document {
+.tab-label {
   align-items: center;
   display: flex;
-  flex-flow: column nowrap;
-  gap: 1em;
-  margin: 51px 2.5% 0 2.5%;
+  flex-wrap: wrap;
+  height: 3em;
+  padding: 0.8em;
+  top: 0;
+  background: rgb(46, 46, 46);
+  border-bottom: 0.125rem solid rgb(35, 35, 35);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.07s;
+  width: 100%;
+}
+
+.tab-label:hover {
+  background-color: rgb(67, 67, 67);
+}
+
+.tab-content {
+  display: block;
+  position: absolute;
+  transform: translateX(12em);
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: #2c3e50;
+  transition: all 0.07s;
+  width: 82%;
 }
 
 .pdf {
   height: 50em;
-  width: 78%;
+  width: 100%;
   border: none;
 }
 
-.nav {
-  align-items: center;
-  display: inline-flex;
-  flex: 0;
-  justify-content: space-between;
-  min-width: 55%;
-  max-width: 75%;
+.tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0.125rem solid #fff;
+  transition: all 0.07s;
+  z-index: 0;
+}
+
+.tab-switch:checked + label + .tab-content {
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.07s;
 }
 
 /*# sourceMappingURL=style.css.map */
