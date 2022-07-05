@@ -1,3 +1,17 @@
+@keyframes blink {
+  0% {
+    color: transparent;
+    text-shadow: none;
+  }
+  50% {
+    color: rgb(255, 255, 254);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    color: transparent;
+    text-shadow: none;
+  }
+}
 html, body {
   color: rgb(35, 35, 35);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -79,6 +93,10 @@ body #home p {
   font-weight: 200;
   margin: 0;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+body #home p #blink {
+  font-weight: 100;
+  animation: 1.01s blink step-end infinite;
 }
 body #about,
 body #portfolio,

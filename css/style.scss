@@ -16,6 +16,21 @@ $button-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
 $pdf-height: 50em;
 
+@keyframes blink {
+    0% {
+        color: transparent;
+        text-shadow: none;
+    }
+    50% {
+        color: $light;
+        text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+    }
+    100% {
+        color: transparent;
+        text-shadow: none;
+    }
+}
+
 html, body {
     color: $text-color;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -105,6 +120,11 @@ body {
             font-weight: 200;
             margin: 0;
             text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+
+            #blink {
+                font-weight: 100;
+                animation: 1.01s blink step-end infinite;
+            }
         }
     }
     
