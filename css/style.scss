@@ -1,27 +1,23 @@
-$background-color: rgb(248, 245, 242);
-$transparent-bg: rgb(0, 0, 0, 0.2);
+$header-color: rgb(238, 226, 220);
+$header-shadow: rgba(35, 35, 35, 0.2);
+
+$main-transparent: rgb(0, 0, 0, 0.2);
 $transparent-dark: rgb(0, 0, 0, 0.7);
-$transparent-light: rgb(248, 245, 242, 0.87);
+$section-transparent: rgb(238, 226, 220, 0.94);
 
-$button-color: #078080;
-$button-hover: #077777;
-$button-active: #0ba3a3;
+$text-color: rgb(35, 35, 35);
+$paragraph-text: rgb(85, 62, 68);
+$light: rgb(255, 255, 254);
 
-$shadow-color: #23232333;
-$tab-shadow: 0 2px 5px #00000035;
-$red-bg: #f45d48;
-$text-color: #232323;
-$paragraph-color: #222525;
-$darkblue: #232046;
-$lightblue: #b8c1ec;
-$light: #fffffe;
-
+$button-color: rgb(255, 255, 255);
+$button-hover: rgb(240, 240, 240);
+$button-active: rgb(159, 79, 106);
+$button-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
 $pdf-height: 50em;
-$pdf-width: 12em;
 
 html, body {
-    color: $paragraph-color;
+    color: $text-color;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -32,212 +28,265 @@ html, body {
 
 body {
     background-attachment: fixed;
-    background-color: $transparent-bg;
+    background-color: $main-transparent;
     background-image: url("../images/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
 
-.fixed-header {
     display: flex;
-    align-items: center;
-    background-color: $background-color;
-    position: fixed;
-    top: 0;
-    height: 2.8em;
-    width: 100%;
-    box-shadow: 0 4px 10px $shadow-color;
-    z-index: 2;
-    
-    .header {
+    flex-flow: column nowrap;
+    gap: 10em;
+    justify-content: space-between;
+
+    header {
         align-items: center;
+        background-color: $header-color;
+        box-shadow: 0 4px 10px $header-shadow;
         display: flex;
-        flex-flow: row wrap;
         flex: auto;
-        justify-content: space-between;
-        margin: 0 1em;
+        flex-flow: row nowrap;
+        height: 2.8em;
+        margin: auto;
         padding: 0 1em;
-        
-        #head-name {
-            font-size: 18px;
-        }
-        
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    
         a {
             color: $text-color;
             display: flex;
-            font-size: 15px;
+            font-size: 18px;
             text-decoration: none;
         }
-        
+    
         a:hover {
             text-decoration: underline;
         }
         
-        .links {
-            display: flex;
-            flex: 0 1;
-            justify-content: flex-end;
-        }
-        
         ul {
-            align-items: center;
-            display: flex;
-            flex: auto;
-            gap: 3em;
+            display: inline-flex;
+            flex: 1 0;
+            gap: 2.5em;
             justify-content: flex-end;
-            list-style: none;
+            margin-right: 2em;
+
+            li {
+                list-style: none;
+    
+                a {
+                    font-size: 15px;
+                }  
+            }
         }
     }
-}
-
-#home {
-    display: flex;
-    margin: 2.8em 0 0 0;
-    height: 100%;
-    width: 100%;
-
-    div {
-        align-items: center;
+    
+    #home {
         color: $light;
         display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        font-weight: 100;
-        gap: 1em;
+        flex-flow: column nowrap;
+        flex: 1;
+        gap: 5px;
         justify-content: center;
-        margin: 2.8em 0 0 0;
-        width: 100%;
-    }
-    
-    strong {
-        font-size: 82px;
-        font-weight: 700;
-        margin-top: -2.8em;
-        text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
-    }
-    
-    em {
-        font-size: 20px;
-        font-weight: 200;
-        text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
-    }
-}
-
-#about,
-#contact,
-#portfolio {
-    align-items: center;
-    background-color: $transparent-light;
-    border-radius: 4px;
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 6em auto;
-    width: 80%;
-
-    h2 {
-        align-self: center;
-        color: $text-color;
-        padding: 1em 0;
         text-align: center;
+        margin: 30vh auto 40vh;
         width: 100%;
+    
+        h1 {
+            font-size: 82px;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
+        }
+        
+        p {
+            font-size: 20px;
+            font-weight: 200;
+            margin: 0;
+            text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+        }
     }
-}
-
-#portfolio {
-    height: 62em;
-    width: 95%;
-}
-
-.tab-container {
-    display: flex;
-    flex: 1;
-    flex-flow: row nowrap;
-    height: $pdf-height;
-    width: 90%;
-    margin: 2em 1em 2em 0;
-
-    .tabs {
-        background-color: transparent;
+    
+    #about,
+    #portfolio,
+    #contact {
+        align-items: center;
+        background-color: $section-transparent;
+        border-radius: 20px;
         display: flex;
         flex-flow: column nowrap;
-        height: $pdf-height;
-        position: relative;
-        width: 100%;
+        margin: 0 auto;
+        height: max-content;
+        width: 80%;
+    
+        h2 {
+            align-self: center;
+            color: $text-color;
+            font-size: 30px;
+            padding: 1em 0 0 0;
+            text-align: center;
+            width: 100%;
+        }
+    }
+    
+    #about {
+        margin: 0 auto;
 
-        .tab {
+        p {
+            color: $paragraph-text;
+            padding: 0 10% 3em;
+            text-align: justify;
+        }
+    }
+    
+    #portfolio {
+        height: max-content;
+        width: 92%;
+
+        .tab-container {
             display: flex;
-            flex: 0;
-            justify-content: flex-start;
-            float: left;
-            height: auto;
-            width: 12em;
-
-            .tab-switch {
-                display: none;
-            }
-            
-            .tab-label {
-                align-items: center;
-                background: $button-color;
-                color: $light;
-                cursor: pointer;
+            flex: 1;
+            flex-flow: row nowrap;
+            height: max-content;
+            width: 90%;
+            margin: 2em 1em 1em 0;
+        
+            .tabs {
+                background-color: transparent;
                 display: flex;
-                flex-wrap: wrap;
-                font-size: 14px;
-                height: 3em;
-                margin: 0 -10px 0 0;
-                padding: .8em;
-                top: 0;
-                transition: all 0.07s;
+                flex-flow: column nowrap;
+                height: $pdf-height;
+                position: relative;
                 width: 100%;
-
-              }
-            
-              .tab-label:hover {
-                background-color: $button-hover;
-              }
-            
-              .tab-content {
-                display: block;
-                position: absolute;
-                transform: translateX(12em);
-                z-index: 0;
-                top: 0;
-                left: 0;
-                right: 0;
-                background: transparent;
-                transition: all 0.07s;
-                width: 82.5%;
-
-                .pdf {
-                    background-color: $background-color;
-                    border-radius: 4px;
-                    height: $pdf-height;
-                    margin: -2em 0 0 0;
-                    width: 100%;
-                    border: none;
+        
+                .tab {
+                    display: flex;
+                    flex: 0;
+                    justify-content: flex-start;
+                    float: left;
+                    height: auto;
+                    width: 12em;
+        
+                    .tab-switch {
+                        display: none;
+                    }
+                    
+                    .tab-label {
+                        align-items: center;
+                        background: $button-color;
+                        border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+                        color: $text-color;
+                        cursor: pointer;
+                        display: flex;
+                        flex-wrap: wrap;
+                        font-size: 14px;
+                        height: 3em;
+                        margin: 0 -10px 0 0;
+                        padding: .8em;
+                        top: 0;
+                        transition: all 0.07s;
+                        width: 100%;
+                    }
+                    
+                    .tab-label:hover {
+                        background-color: $button-hover;
+                    }
+                    
+                    .tab-content {
+                        display: block;
+                        position: absolute;
+                        transform: translateX(12em);
+                        z-index: 0;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        background: transparent;
+                        transition: all 0.07s;
+                        width: 82.5%;
+        
+                        .pdf {
+                            background-color: transparent;
+                            border-radius: 4px;
+                            height: $pdf-height;
+                            margin: -2em 0 0 0;
+                            width: 100%;
+                            border: none;
+                        }
+                    }
+                        
+                    .tab-switch:checked + .tab-label {
+                        background: $button-active;
+                        box-shadow: $button-shadow;
+                        color: $light;
+                        transform: scale(1.1);
+                        transition: all 0.05s;
+                        z-index: 0;
+                    }
+                    
+                    .tab-switch:checked + label + .tab-content {
+                        z-index: 1;
+                        opacity: 1;
+                        transition: all 0.05s;
+                    }
                 }
-              }
-              .tab-switch:checked + .tab-label {
-                background: $button-active;
-                box-shadow: $tab-shadow;
-                color: $light;
-                transform: scale(1.1);
-                transition: all 0.05s;
-                z-index: 0;
-              }
-            
-              .tab-switch:checked + label + .tab-content {
-                z-index: 1;
-                opacity: 1;
-                transition: all 0.05s;
-              }
+            }
+        
+            .tabs::after {
+                clear: both;
+            }
+        }
+    }
+    
+    #contact {
+        padding: 0 0 3em 0;
+
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            list-style: none;
+            justify-content: space-between;
+            width: 80%;
+
+            li {
+                display: flex;
+                flex: auto;
+            }
         }
     }
 
-    .tabs::after {
-        clear: both;
-    }
+    footer {
+        align-items: center;
+        background-color: $transparent-dark;
+        bottom: 0;
+        color: $light;
+        display: inline-flex;
+        flex: 1;
+        gap: .5em;
+        justify-content: center;
+        padding: 2px 0;
+        margin: 0;
+        width: 100%;
     
+        p,
+        a {
+            color: $light;
+            font-size: 14px;
+        }
+    
+        a:hover {
+            color: rgb(29, 197, 163);
+            transition-duration: 250ms;
+        }
+    
+        img {
+            height: 24px;
+            width: auto;
+        }
+    
+        img:hover {
+            transform: scale(1.15);
+            transition-duration: 250ms;
+        }
+    }
 }
