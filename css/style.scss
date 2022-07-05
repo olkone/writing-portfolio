@@ -17,13 +17,22 @@ html, body {
     scroll-behavior: smooth;
 }
 
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color: $background-color;
+}
+
 .fixed-header {
     display: flex;
     align-items: center;
     background-color: $background-color;
     position: fixed;
     top: 0;
-    height: 51px;
+    height: 2.8em;
     width: 100%;
     box-shadow: 0 4px 10px $shadow-color;
     z-index: 2;
@@ -71,12 +80,11 @@ a:hover {
 
 #home {
     display: flex;
-    background-image: url("../images/background.jpg");
-    background-color: $background-color;
+    background-color: rgb(0, 0, 0, 0.2);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 85%;
-    margin: 51px 0 0 0;
+    margin: 2.8em 0 0 0;
+    height: 100%;
     width: 100%;
 }
 
@@ -89,19 +97,21 @@ a:hover {
     font-weight: 100;
     gap: 1em;
     justify-content: center;
-    margin: 51px 0 0 0;
+    margin: 2.8em 0 0 0;
     width: 100%;
 }
 
 #home strong {
     font-size: 82px;
     font-weight: 700;
-    margin-top: -2em;
+    margin-top: -2.8em;
+    text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
 }
 
 #home em {
     font-size: 20px;
     font-weight: 200;
+    text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
 }
 
 #about,
@@ -119,6 +129,8 @@ a:hover {
 #contact h2 {
     padding: 1em 0 0 0;
     background-color: $background-color;
+    text-align: center;
+    width: 100%;
 }
 
 .tab-container {
