@@ -133,8 +133,7 @@ a:hover {
   width: 90%;
   margin: 0 1em;
 }
-
-.tabs {
+.tab-container .tabs {
   background-color: rgb(114, 115, 119);
   display: flex;
   flex-flow: column nowrap;
@@ -142,12 +141,10 @@ a:hover {
   position: relative;
   width: 100%;
 }
-
-.tabs::after {
+.tab-container .tabs::after {
   clear: both;
 }
-
-.tab {
+.tab-container .tab {
   display: flex;
   flex: 0;
   justify-content: flex-start;
@@ -155,12 +152,10 @@ a:hover {
   height: auto;
   width: 12em;
 }
-
-.tab-switch {
+.tab-container .tab-switch {
   display: none;
 }
-
-.tab-label {
+.tab-container .tab-label {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -175,12 +170,10 @@ a:hover {
   transition: all 0.07s;
   width: 100%;
 }
-
-.tab-label:hover {
+.tab-container .tab-label:hover {
   background-color: rgb(67, 67, 67);
 }
-
-.tab-content {
+.tab-container .tab-content {
   display: block;
   position: absolute;
   transform: translateX(12em);
@@ -193,25 +186,23 @@ a:hover {
   transition: all 0.07s;
   width: 82%;
 }
-
-.pdf {
-  height: 50em;
-  width: 100%;
-  border: none;
-}
-
-.tab-switch:checked + .tab-label {
+.tab-container .tab-switch:checked + .tab-label {
   background: #fff;
   color: #2c3e50;
   border-bottom: 0.125rem solid #fff;
   transition: all 0.07s;
   z-index: 0;
 }
-
-.tab-switch:checked + label + .tab-content {
+.tab-container .tab-switch:checked + label + .tab-content {
   z-index: 1;
   opacity: 1;
   transition: all 0.07s;
+}
+
+.pdf {
+  height: 50em;
+  width: 100%;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
