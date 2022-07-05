@@ -1,8 +1,15 @@
-$background-color: #f8f5f2;
+$background-color: rgb(248, 245, 242);
+$transparent-bg: rgb(0, 0, 0, 0.2);
+$transparent-dark: rgb(0, 0, 0, 0.7);
+$transparent-light: rgb(248, 245, 242, 0.87);
+
 $button-color: #078080;
 $button-hover: #077777;
+$button-active: #0ba3a3;
+
 $shadow-color: #23232333;
-$header-color: #f45d48;
+$tab-shadow: 0 2px 5px #00000035;
+$red-bg: #f45d48;
 $text-color: #232323;
 $paragraph-color: #222525;
 $darkblue: #232046;
@@ -10,8 +17,10 @@ $lightblue: #b8c1ec;
 $light: #fffffe;
 
 
+$pdf-height: 50em;
+$pdf-width: 12em;
+
 html, body {
-    background-color: $background-color;
     color: $paragraph-color;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
@@ -22,12 +31,12 @@ html, body {
 }
 
 body {
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: $transparent-bg;
+    background-image: url("../images/background.jpg");
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-color: $background-color;
 }
 
 .fixed-header {
@@ -40,186 +49,195 @@ body {
     width: 100%;
     box-shadow: 0 4px 10px $shadow-color;
     z-index: 2;
-}
-
-.header {
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    flex: auto;
-    justify-content: space-between;
-    margin: 0 1em;
-    padding: 0 1em;
-}
-
-#head-name {
-    font-size: 18px;
-}
-
-.header a {
-    color: $text-color;
-    display: flex;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.header .links {
-    display: flex;
-    flex: 0 1;
-    justify-content: flex-end;
-}
-
-.header ul {
-    align-items: center;
-    display: flex;
-    flex: auto;
-    gap: 3em;
-    justify-content: flex-end;
-    list-style: none;
+    
+    .header {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        flex: auto;
+        justify-content: space-between;
+        margin: 0 1em;
+        padding: 0 1em;
+        
+        #head-name {
+            font-size: 18px;
+        }
+        
+        a {
+            color: $text-color;
+            display: flex;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .links {
+            display: flex;
+            flex: 0 1;
+            justify-content: flex-end;
+        }
+        
+        ul {
+            align-items: center;
+            display: flex;
+            flex: auto;
+            gap: 3em;
+            justify-content: flex-end;
+            list-style: none;
+        }
+    }
 }
 
 #home {
     display: flex;
-    background-color: rgb(0, 0, 0, 0.2);
-    background-repeat: no-repeat;
-    background-size: cover;
     margin: 2.8em 0 0 0;
     height: 100%;
     width: 100%;
-}
 
-#home div {
-    align-items: center;
-    color: $light;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    font-weight: 100;
-    gap: 1em;
-    justify-content: center;
-    margin: 2.8em 0 0 0;
-    width: 100%;
-}
-
-#home strong {
-    font-size: 82px;
-    font-weight: 700;
-    margin-top: -2.8em;
-    text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
-}
-
-#home em {
-    font-size: 20px;
-    font-weight: 200;
-    text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+    div {
+        align-items: center;
+        color: $light;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        font-weight: 100;
+        gap: 1em;
+        justify-content: center;
+        margin: 2.8em 0 0 0;
+        width: 100%;
+    }
+    
+    strong {
+        font-size: 82px;
+        font-weight: 700;
+        margin-top: -2.8em;
+        text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
+    }
+    
+    em {
+        font-size: 20px;
+        font-weight: 200;
+        text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+    }
 }
 
 #about,
 #contact,
 #portfolio {
     align-items: center;
+    background-color: $transparent-light;
+    border-radius: 4px;
     display: flex;
     flex-flow: column nowrap;
-    padding: 2em 0 0 0;
-    width: 100%;
+    margin: 6em auto;
+    width: 80%;
+
+    h2 {
+        align-self: center;
+        color: $text-color;
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
 }
 
-#about h2,
-#portfolio h2,
-#contact h2 {
-    padding: 1em 0 0 0;
-    background-color: $background-color;
-    text-align: center;
-    width: 100%;
+#portfolio {
+    height: 62em;
+    width: 95%;
 }
 
 .tab-container {
     display: flex;
     flex: 1;
     flex-flow: row nowrap;
-    height: 50em;
+    height: $pdf-height;
     width: 90%;
-    margin: 0 1em;
+    margin: 2em 1em 2em 0;
 
     .tabs {
-        background-color: rgb(114, 115, 119);
+        background-color: transparent;
         display: flex;
         flex-flow: column nowrap;
-        height: 50em;
+        height: $pdf-height;
         position: relative;
         width: 100%;
+
+        .tab {
+            display: flex;
+            flex: 0;
+            justify-content: flex-start;
+            float: left;
+            height: auto;
+            width: 12em;
+
+            .tab-switch {
+                display: none;
+            }
+            
+            .tab-label {
+                align-items: center;
+                background: $button-color;
+                color: $light;
+                cursor: pointer;
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 14px;
+                height: 3em;
+                margin: 0 -10px 0 0;
+                padding: .8em;
+                top: 0;
+                transition: all 0.07s;
+                width: 100%;
+
+              }
+            
+              .tab-label:hover {
+                background-color: $button-hover;
+              }
+            
+              .tab-content {
+                display: block;
+                position: absolute;
+                transform: translateX(12em);
+                z-index: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: transparent;
+                transition: all 0.07s;
+                width: 82.5%;
+
+                .pdf {
+                    background-color: $background-color;
+                    border-radius: 4px;
+                    height: $pdf-height;
+                    margin: -2em 0 0 0;
+                    width: 100%;
+                    border: none;
+                }
+              }
+              .tab-switch:checked + .tab-label {
+                background: $button-active;
+                box-shadow: $tab-shadow;
+                color: $light;
+                transform: scale(1.1);
+                transition: all 0.05s;
+                z-index: 0;
+              }
+            
+              .tab-switch:checked + label + .tab-content {
+                z-index: 1;
+                opacity: 1;
+                transition: all 0.05s;
+              }
+        }
     }
+
     .tabs::after {
         clear: both;
     }
     
-    .tab {
-        display: flex;
-        flex: 0;
-        justify-content: flex-start;
-        float: left;
-        height: auto;
-        width: 12em;
-    }
-    
-    .tab-switch {
-        display: none;
-    }
-    
-    .tab-label {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        height: 3em;
-        padding: .8em;
-        top: 0;
-        background: rgb(46, 46, 46);
-        border-bottom: 0.125rem solid rgb(35, 35, 35);
-        color: #fff;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.07s;
-        width: 100%;
-      }
-    
-      .tab-label:hover {
-        background-color: rgb(67, 67, 67);
-      }
-    
-      .tab-content {
-        display: block;
-        position: absolute;
-        transform: translateX(12em);
-        z-index: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        color: #2c3e50;
-        transition: all 0.07s;
-        width: 82%;
-      }
-      .tab-switch:checked + .tab-label {
-        background: #fff;
-        color: #2c3e50;
-        border-bottom: 0.125rem solid #fff;
-        transition: all 0.07s;
-        z-index: 0;
-      }
-    
-      .tab-switch:checked + label + .tab-content {
-        z-index: 1;
-        opacity: 1;
-        transition: all 0.07s;
-      }
-}
-
-.pdf {
-    height: 50em;
-    width: 100%;
-    border: none;
 }

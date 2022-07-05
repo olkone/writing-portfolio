@@ -1,5 +1,4 @@
 html, body {
-  background-color: #f8f5f2;
   color: #222525;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 0;
@@ -10,18 +9,18 @@ html, body {
 }
 
 body {
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url("../images/background.jpg");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-color: #f8f5f2;
 }
 
 .fixed-header {
   display: flex;
   align-items: center;
-  background-color: #f8f5f2;
+  background-color: rgb(248, 245, 242);
   position: fixed;
   top: 0;
   height: 2.8em;
@@ -29,8 +28,7 @@ body {
   box-shadow: 0 4px 10px rgba(35, 35, 35, 0.2);
   z-index: 2;
 }
-
-.header {
+.fixed-header .header {
   align-items: center;
   display: flex;
   flex-flow: row wrap;
@@ -39,29 +37,24 @@ body {
   margin: 0 1em;
   padding: 0 1em;
 }
-
-#head-name {
+.fixed-header .header #head-name {
   font-size: 18px;
 }
-
-.header a {
+.fixed-header .header a {
   color: #232323;
   display: flex;
   font-size: 15px;
   text-decoration: none;
 }
-
-a:hover {
+.fixed-header .header a:hover {
   text-decoration: underline;
 }
-
-.header .links {
+.fixed-header .header .links {
   display: flex;
   flex: 0 1;
   justify-content: flex-end;
 }
-
-.header ul {
+.fixed-header .header ul {
   align-items: center;
   display: flex;
   flex: auto;
@@ -72,14 +65,10 @@ a:hover {
 
 #home {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.2);
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 2.8em 0 0 0;
   height: 100%;
   width: 100%;
 }
-
 #home div {
   align-items: center;
   color: #fffffe;
@@ -92,14 +81,12 @@ a:hover {
   margin: 2.8em 0 0 0;
   width: 100%;
 }
-
 #home strong {
   font-size: 82px;
   font-weight: 700;
   margin-top: -2.8em;
   text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
 }
-
 #home em {
   font-size: 20px;
   font-weight: 200;
@@ -110,19 +97,26 @@ a:hover {
 #contact,
 #portfolio {
   align-items: center;
+  background-color: rgba(248, 245, 242, 0.87);
+  border-radius: 4px;
   display: flex;
   flex-flow: column nowrap;
-  padding: 2em 0 0 0;
+  margin: 6em auto;
+  width: 80%;
+}
+#about h2,
+#contact h2,
+#portfolio h2 {
+  align-self: center;
+  color: #232323;
+  padding: 1em 0;
+  text-align: center;
   width: 100%;
 }
 
-#about h2,
-#portfolio h2,
-#contact h2 {
-  padding: 1em 0 0 0;
-  background-color: #f8f5f2;
-  text-align: center;
-  width: 100%;
+#portfolio {
+  height: 62em;
+  width: 95%;
 }
 
 .tab-container {
@@ -131,20 +125,17 @@ a:hover {
   flex-flow: row nowrap;
   height: 50em;
   width: 90%;
-  margin: 0 1em;
+  margin: 2em 1em 2em 0;
 }
 .tab-container .tabs {
-  background-color: rgb(114, 115, 119);
+  background-color: transparent;
   display: flex;
   flex-flow: column nowrap;
   height: 50em;
   position: relative;
   width: 100%;
 }
-.tab-container .tabs::after {
-  clear: both;
-}
-.tab-container .tab {
+.tab-container .tabs .tab {
   display: flex;
   flex: 0;
   justify-content: flex-start;
@@ -152,28 +143,28 @@ a:hover {
   height: auto;
   width: 12em;
 }
-.tab-container .tab-switch {
+.tab-container .tabs .tab .tab-switch {
   display: none;
 }
-.tab-container .tab-label {
+.tab-container .tabs .tab .tab-label {
   align-items: center;
+  background: #078080;
+  color: #fffffe;
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
+  font-size: 14px;
   height: 3em;
+  margin: 0 -10px 0 0;
   padding: 0.8em;
   top: 0;
-  background: rgb(46, 46, 46);
-  border-bottom: 0.125rem solid rgb(35, 35, 35);
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
   transition: all 0.07s;
   width: 100%;
 }
-.tab-container .tab-label:hover {
-  background-color: rgb(67, 67, 67);
+.tab-container .tabs .tab .tab-label:hover {
+  background-color: #077777;
 }
-.tab-container .tab-content {
+.tab-container .tabs .tab .tab-content {
   display: block;
   position: absolute;
   transform: translateX(12em);
@@ -181,28 +172,33 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
-  color: #2c3e50;
+  background: transparent;
   transition: all 0.07s;
-  width: 82%;
+  width: 82.5%;
 }
-.tab-container .tab-switch:checked + .tab-label {
-  background: #fff;
-  color: #2c3e50;
-  border-bottom: 0.125rem solid #fff;
-  transition: all 0.07s;
-  z-index: 0;
-}
-.tab-container .tab-switch:checked + label + .tab-content {
-  z-index: 1;
-  opacity: 1;
-  transition: all 0.07s;
-}
-
-.pdf {
+.tab-container .tabs .tab .tab-content .pdf {
+  background-color: rgb(248, 245, 242);
+  border-radius: 4px;
   height: 50em;
+  margin: -2em 0 0 0;
   width: 100%;
   border: none;
+}
+.tab-container .tabs .tab .tab-switch:checked + .tab-label {
+  background: #0ba3a3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2078431373);
+  color: #fffffe;
+  transform: scale(1.1);
+  transition: all 0.05s;
+  z-index: 0;
+}
+.tab-container .tabs .tab .tab-switch:checked + label + .tab-content {
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.05s;
+}
+.tab-container .tabs::after {
+  clear: both;
 }
 
 /*# sourceMappingURL=style.css.map */
