@@ -1,14 +1,18 @@
-$background-color: rgb(250, 247, 245);
-$button-color: rgb(64, 119, 231);
-$button-hover: rgb(50, 97, 190);
-$dropdown-color: rgb(250, 247, 245, 0.75);
-$shadow-color: rgb(46, 46, 46, 0.2);
-$text-color: rgb(46, 46, 46);
+$background-color: #f8f5f2;
+$button-color: #078080;
+$button-hover: #077777;
+$shadow-color: #23232333;
+$header-color: #f45d48;
+$text-color: #232323;
+$paragraph-color: #222525;
+$darkblue: #232046;
+$lightblue: #b8c1ec;
+$light: #fffffe;
 
 
 html, body {
     background-color: $background-color;
-    color: $text-color;
+    color: $paragraph-color;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -90,7 +94,7 @@ a:hover {
 
 #home div {
     align-items: center;
-    color: $background-color;
+    color: $light;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -151,10 +155,7 @@ a:hover {
     width: 100%;
 }
 
-.tabs::before,
-.tabs::after {
-    content: "";
-}
+
 
 .tabs::after {
     clear: both;

@@ -1,6 +1,6 @@
 html, body {
-  background-color: rgb(250, 247, 245);
-  color: rgb(46, 46, 46);
+  background-color: #f8f5f2;
+  color: #222525;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -15,18 +15,18 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-color: rgb(250, 247, 245);
+  background-color: #f8f5f2;
 }
 
 .fixed-header {
   display: flex;
   align-items: center;
-  background-color: rgb(250, 247, 245);
+  background-color: #f8f5f2;
   position: fixed;
   top: 0;
   height: 2.8em;
   width: 100%;
-  box-shadow: 0 4px 10px rgba(46, 46, 46, 0.2);
+  box-shadow: 0 4px 10px rgba(35, 35, 35, 0.2);
   z-index: 2;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .header a {
-  color: rgb(46, 46, 46);
+  color: #232323;
   display: flex;
   font-size: 15px;
   text-decoration: none;
@@ -82,7 +82,7 @@ a:hover {
 
 #home div {
   align-items: center;
-  color: rgb(250, 247, 245);
+  color: #fffffe;
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -120,7 +120,7 @@ a:hover {
 #portfolio h2,
 #contact h2 {
   padding: 1em 0 0 0;
-  background-color: rgb(250, 247, 245);
+  background-color: #f8f5f2;
   text-align: center;
   width: 100%;
 }
@@ -141,11 +141,6 @@ a:hover {
   height: 50em;
   position: relative;
   width: 100%;
-}
-
-.tabs::before,
-.tabs::after {
-  content: "";
 }
 
 .tabs::after {
