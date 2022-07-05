@@ -5,32 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./main-script.js" defer></script>
     <title>Technical Writing Portfolio</title>
 </head>
 <body>
-    <div class="fixed-header">
-        <div class="header">
-            <h1><a id="head-name" href="./index.html">Julia</a></h1>
-            <div class="links">
-                <ul>
-                    <li><a href="./#home">Home</a></li>
-                    <li><a href="./#about">About</a></li>
-                    <li><a class="drop-btn"><a href="./#portfolio">Portfolio</a></li>
-                    <li><a href="./#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <header>
+        <h1><a href="./index.html">Julia</a></h1>
+        <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a class="drop-btn"><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
     <div id="home">
-        <div>
-            <strong>Julia</strong>
-            <em>Technical Writer</em>
-        </div>
+        <h1>Julia</h1>
+        <p>Technical Writer</p>
     </div>
-
     <div id="about">
         <h2>About</h2>
+        <p>Dignissim sea sit ut dolores facilisis diam. Ut justo magna nonumy sed duo vel sed justo nonumy consequat autem sea at dolor elit vero. Accusam magna nam invidunt at soluta sed. At in et diam voluptua et duis invidunt magna tempor consetetur lorem rebum eos dolores gubergren clita et. Erat aliquyam elitr quis esse clita lorem nulla sit et lorem.
+        </p>
     </div>
     <div id="portfolio">
         <h2>Portfolio</h2>
@@ -52,7 +47,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab3" class="tab-switch" data-page="proposal">
                     <label for="tab3" class="tab-label">Proposal</label>
@@ -61,7 +55,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab4" class="tab-switch" data-page="data-report">
                     <label for="tab4" class="tab-label">Data Report</label>
@@ -70,7 +63,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab5" class="tab-switch" data-page="recommendation-report">
                     <label for="tab5" class="tab-label">Recommendation Report</label>
@@ -79,7 +71,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab6" class="tab-switch" data-page="guidance-document">
                     <label for="tab6" class="tab-label">Guidance Document</label>
@@ -88,7 +79,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab7" class="tab-switch" data-page="user-guide">
                     <label for="tab7" class="tab-label">User Guide</label>
@@ -97,7 +87,6 @@
                         </iframe>
                     </div>
                 </div>
-    
                 <div class="tab">
                     <input type="radio" name="css-tabs" id="tab8" class="tab-switch" data-page="technical-article">
                     <label for="tab8" class="tab-label">Technical Article</label>
@@ -106,16 +95,20 @@
                         </iframe>
                     </div>
                 </div>
-    
             </div>
+        </div>
     </div>
-    <div id="contact">
-        <h2>Contact</h2>
-        <div class="contact-container">
+        <div id="contact">
+            <h2>Contact</h2>
             <ul>
+                <li>Augue quis luptatum soluta quis duo.</li>
+                <li>Sit stet est placerat diam voluptua in cum.</li>
             </ul>
         </div>
     </div>
-    </div>
+    <footer>
+        <p>&copy; <span id="year"></span> Julia, <a href="https://github.com/olkone">olkone</a></p>
+        <a href="https://github.com/olkone/writing-portfolio"><img src="./images/GitHub-Mark-Light-32px.png" alt="GitHub logo"></a>
+    </footer>
 </body>
 </html>
