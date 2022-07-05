@@ -24,7 +24,7 @@ html, body {
 
 body {
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(238, 226, 220);
   background-image: url("../images/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
