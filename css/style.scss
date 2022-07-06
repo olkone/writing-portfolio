@@ -6,15 +6,21 @@ $transparent-dark: rgb(0, 0, 0, 0.7);
 $section-transparent: rgb(238, 226, 220, 0.94);
 
 $text-color: rgb(35, 35, 35);
-$paragraph-text: rgb(85, 62, 68);
+$paragraph-text: rgb(75 92 69);
 $light: rgb(255, 255, 254);
 
 $button-color: rgb(255, 255, 255);
 $button-hover: rgb(240, 240, 240);
-$button-active: rgb(159, 79, 106);
+$button-active: rgb(226 163 5);
 $button-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
 $pdf-height: 50em;
+
+$yellow: rgb(223 203 0);
+$yellow-dark: rgb(226 163 5);
+
+$green-dark: rgb(75 92 69);
+$green: rgb(110 125 65);
 
 @keyframes blink {
     0% {
@@ -44,10 +50,11 @@ html, body {
 body {
     background-attachment: fixed;
     background-color: $header-color;
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/flowers.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+
 
     display: flex;
     flex-flow: column nowrap;
@@ -105,7 +112,7 @@ body {
         gap: 5px;
         justify-content: center;
         text-align: center;
-        margin: 30vh auto 40vh;
+        margin: 35vh auto 35vh;
         width: 100%;
     
         h1 {

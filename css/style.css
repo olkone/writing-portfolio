@@ -25,10 +25,10 @@ html, body {
 body {
   background-attachment: fixed;
   background-color: rgb(238, 226, 220);
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/flowers.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   display: flex;
   flex-flow: column nowrap;
   gap: 10em;
@@ -79,7 +79,7 @@ body #home {
   gap: 5px;
   justify-content: center;
   text-align: center;
-  margin: 30vh auto 40vh;
+  margin: 35vh auto 35vh;
   width: 100%;
 }
 body #home h1 {
@@ -124,7 +124,7 @@ body #about {
   margin: 0 auto;
 }
 body #about p {
-  color: rgb(85, 62, 68);
+  color: rgb(75, 92, 69);
   padding: 0 10% 3em;
   text-align: justify;
 }
@@ -199,7 +199,7 @@ body #portfolio .tab-container .tabs .tab .tab-content .pdf {
   border: none;
 }
 body #portfolio .tab-container .tabs .tab .tab-switch:checked + .tab-label {
-  background: rgb(159, 79, 106);
+  background: rgb(226, 163, 5);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   color: rgb(255, 255, 254);
   transform: scale(1.1);
