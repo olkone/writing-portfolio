@@ -41,12 +41,15 @@
         </div>
     </div>
     <footer>
-        <p>&copy; <span id="year"></span> written by Julia Serra, designed by Oliver Konecny</p>
+        <p>&copy; 2022<span id="year"></span> written by Julia Serra, designed by Oliver Konecny</p>
         <a href="https://github.com/olkone/"><img src="./images/GitHub-Mark-64px.png" alt="GitHub logo"></a>
     </footer>
     <script>
         const year = document.querySelector('#year');
-        year.innerText = new Date().getFullYear();
+        if (new Date().getFullYear() > 2022) {
+            year.innerText = '-' + new Date().getFullYear();
+        }
+        
     </script>
 </body>
 </html>
