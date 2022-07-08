@@ -1,23 +1,25 @@
-$header-color: rgb(255, 253, 246);
+$header-color: rgb(240, 234, 222);
 $header-shadow: rgba(35, 35, 35, 0.2);
 
 $main-transparent: rgb(0, 0, 0, 0.2);
-$transparent-dark: rgb(0, 0, 0, 0.8);
-$section-transparent: rgba(255, 253, 246, 0.952);
+$bg: rgba(0, 0, 0, 0.2);
+$section-transparent: rgba(240, 234, 222, 0.935);
+$old-section-transparent: rgba(255, 253, 246, 0.935);
 
 $title: rgb(255, 253, 246);
 $text-color: rgb(49, 59, 45);
-$paragraph-text: rgb(75 92 69);
+$paragraph-text: rgb(45, 55, 41);
 $light: rgb(255, 255, 254);
-$footer-text: rgba(255, 255, 255, 0.89);
+$footer-text: rgb(75 92 69);
 $oliver: rgb(255, 241, 134);
 
-$button-color: rgb(255, 255, 255);
-$button-hover: rgb(240, 240, 240);
-$button-active: rgb(235, 188, 9);
+$button-color: rgb(248, 246, 235);
+$button-hover: rgb(152, 173, 144);
+$button-active: rgb(75 92 69);
+$active-border:rgb(44, 53, 40);
 $button-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
-$pdf-height: 50em;
+$pdf-height: 100vh;
 
 @keyframes blink {
     0% {
@@ -26,13 +28,15 @@ $pdf-height: 50em;
     }
     50% {
         color: $title;
-        text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+        text-shadow: 2px 3px 2px rgb(0, 0, 0, 0.7);
     }
     100% {
         color: transparent;
         text-shadow: none;
     }
 }
+
+
 
 html, body {
     color: $text-color;
@@ -45,16 +49,16 @@ html, body {
 }
 
 body {
+    background: linear-gradient($bg, $bg), url("../images/background.jpg");
     background-attachment: fixed;
     background-color: $header-color;
-    background-image: url("../images/flowers.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
 
-
     display: flex;
     flex-flow: column nowrap;
+    flex: auto;
     gap: 10em;
     justify-content: space-between;
 
@@ -63,6 +67,7 @@ body {
         background-color: $header-color;
         box-shadow: 0 4px 10px $header-shadow;
         display: flex;
+        font-family: 'Averia Libre';
         flex: auto;
         flex-flow: row nowrap;
         height: 2.8em;
@@ -77,6 +82,7 @@ body {
             color: $text-color;
             display: flex;
             font-size: 18px;
+            margin-left: .5em;
             text-decoration: none;
         }
     
@@ -89,7 +95,7 @@ body {
             flex: 1 0;
             gap: 2.5em;
             justify-content: flex-end;
-            margin-right: 2em;
+            margin-right: 3em;
 
             li {
                 list-style: none;
@@ -110,20 +116,22 @@ body {
         justify-content: center;
         text-align: center;
         margin: 36vh auto;
+        padding: 2em;
         width: max-content;
     
         h1 {
-            font-size: 82px;
+            font-size: 5vmin;
+            font-size: 9vmax;
             font-weight: 700;
             margin: 0;
-            text-shadow: 3px 4px 6px rgb(0, 0, 0, 0.5);
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.7);
         }
         
         p {
             font-size: 20px;
             font-weight: 200;
             margin: 0;
-            text-shadow: 2px 3px 5px rgb(0, 0, 0, 0.5);
+            text-shadow: 2px 3px 2px rgb(0, 0, 0, 0.7);
             text-align: right;
 
             #blink {
@@ -134,8 +142,7 @@ body {
     }
     
     #about,
-    #portfolio,
-    #contact {
+    #portfolio {
         align-items: center;
         background-color: $section-transparent;
         border-radius: 20px;
@@ -143,11 +150,11 @@ body {
         flex-flow: column nowrap;
         margin: 0 auto;
         height: max-content;
-        width: 80%;
     
         h2 {
             align-self: center;
             color: $text-color;
+            font-family: 'Averia Libre';
             font-size: 30px;
             padding: 0.4em 0;
             text-align: center;
@@ -157,157 +164,90 @@ body {
     
     #about {
         margin: 0 auto;
-
+        width: 80%;
         p {
             color: $paragraph-text;
+            font-size: 3vmax;
+            font-size: 2.5vmin;
+            line-height: 2;
             padding: 0 10% 3em;
             text-align: justify;
         }
     }
-    
+
     #portfolio {
-        height: max-content;
-        width: 92%;
+        padding-bottom: 4em;
+        width: 70%;
 
-        .tab-container {
+        #btn-container {
             display: flex;
-            flex: 1;
-            flex-flow: row nowrap;
-            height: max-content;
-            width: 90%;
-            margin: 2em 1em 1em 0;
-        
-            .tabs {
-                background-color: transparent;
-                display: flex;
-                flex-flow: column nowrap;
-                height: $pdf-height;
-                position: relative;
-                width: 100%;
-        
-                .tab {
-                    display: flex;
-                    flex: 0;
-                    justify-content: flex-start;
-                    float: left;
-                    height: auto;
-                    width: 12em;
-        
-                    .tab-switch {
-                        display: none;
-                    }
-                    
-                    .tab-label {
-                        align-items: center;
-                        background: $button-color;
-                        border-bottom: 1px solid rgb(0, 0, 0, 0.1);
-                        color: $text-color;
-                        cursor: pointer;
-                        display: flex;
-                        flex-wrap: wrap;
-                        font-size: 14px;
-                        height: 3em;
-                        margin: 0 -10px 0 0;
-                        padding: .8em;
-                        top: 0;
-                        transition: all 0.07s;
-                        width: 100%;
-                    }
-                    
-                    .tab-label:hover {
-                        background-color: $button-hover;
-                    }
-                    
-                    .tab-content {
-                        display: block;
-                        position: absolute;
-                        transform: translateX(12em);
-                        z-index: 0;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        background: transparent;
-                        transition: all 0.07s;
-                        width: 82.5%;
-        
-                        .pdf {
-                            background-color: transparent;
-                            border-radius: 4px;
-                            height: $pdf-height;
-                            margin: -2em 0 0 0;
-                            width: 100%;
-                            border: none;
-                        }
-                    }
-                        
-                    .tab-switch:checked + .tab-label {
-                        background: $button-active;
-                        box-shadow: $button-shadow;
-                        color: rgb(255, 255, 255);
-                        font-weight: 600;
-                        text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.35);
-                        transform: scale(1.1);
-                        transition: all 0.05s;
-                        z-index: 0;
-                    }
-                    
-                    .tab-switch:checked + label + .tab-content {
-                        z-index: 1;
-                        opacity: 1;
-                        transition: all 0.05s;
-                    }
-                }
-            }
-        
-            .tabs::after {
-                clear: both;
-            }
-        }
-    }
+            flex-flow: row wrap;
+            flex: 1 0;
+            justify-content: space-around;
     
-    #contact {
-        padding: 0 0 3em 0;
+            width: 90%;
+    
+            button {
+                flex: 1 0 50%;
 
-        ul {
-            display: flex;
-            flex-flow: row nowrap;
-            list-style: none;
-            justify-content: space-between;
-            width: 80%;
+                background-color: $button-color;
+                border: 1px solid $paragraph-text;
+                border-radius: 5px;
+                
+                margin: 1%;
+                max-width: 18em;
+                min-width: 14em;
+                padding: 16px 0;
 
-            li {
-                display: flex;
-                flex: auto;
+                cursor: pointer;
+
+                color: $text-color;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 16px;
+
+                transition: all 100ms;
+        
             }
+
+            button:hover {
+                background-color: $button-hover;
+            }
+
+            button:active {
+                background-color: $button-active;
+                border: 1px solid $active-border;
+                color: $button-color;
+            }
+    
         }
+
     }
 
     footer {
         align-items: center;
-        background-color: $transparent-dark;
+        background-color: $header-color;
         bottom: 0;
         color: $footer-text;
-        display: inline-flex;
+        display: flex;
+        flex-flow: row wrap;
         flex: 1;
         gap: .5em;
         justify-content: center;
         padding: 2px 0;
-        margin: 0;
+        margin: auto;
+        height: max-content;
         width: 100%;
+
     
         p,
         a {
             color: $footer-text;
-            font-size: 14px;
-        }
-    
-        a:hover {
-            color: $oliver;
-            transition-duration: 250ms;
+            font-size: 12px;
         }
     
         img {
-            height: 24px;
+            min-height: 12px;
+            max-height: 20px;
             width: auto;
         }
     
@@ -315,5 +255,11 @@ body {
             transform: scale(1.15);
             transition-duration: 250ms;
         }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        background-size: cover;
     }
 }

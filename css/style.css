@@ -5,7 +5,7 @@
   }
   50% {
     color: rgb(255, 253, 246);
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
   }
   100% {
     color: transparent;
@@ -23,22 +23,24 @@ html, body {
 }
 
 body {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/background.jpg");
   background-attachment: fixed;
-  background-color: rgb(255, 253, 246);
-  background-image: url("../images/flowers.jpg");
+  background-color: rgb(240, 234, 222);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
   flex-flow: column nowrap;
+  flex: auto;
   gap: 10em;
   justify-content: space-between;
 }
 body header {
   align-items: center;
-  background-color: rgb(255, 253, 246);
+  background-color: rgb(240, 234, 222);
   box-shadow: 0 4px 10px rgba(35, 35, 35, 0.2);
   display: flex;
+  font-family: "Averia Libre";
   flex: auto;
   flex-flow: row nowrap;
   height: 2.8em;
@@ -53,6 +55,7 @@ body header a {
   color: rgb(49, 59, 45);
   display: flex;
   font-size: 18px;
+  margin-left: 0.5em;
   text-decoration: none;
 }
 body header a:hover {
@@ -63,7 +66,7 @@ body header ul {
   flex: 1 0;
   gap: 2.5em;
   justify-content: flex-end;
-  margin-right: 2em;
+  margin-right: 3em;
 }
 body header ul li {
   list-style: none;
@@ -80,19 +83,21 @@ body #home {
   justify-content: center;
   text-align: center;
   margin: 36vh auto;
+  padding: 2em;
   width: max-content;
 }
 body #home h1 {
-  font-size: 82px;
+  font-size: 5vmin;
+  font-size: 9vmax;
   font-weight: 700;
   margin: 0;
-  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.7);
 }
 body #home p {
   font-size: 20px;
   font-weight: 200;
   margin: 0;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
   text-align: right;
 }
 body #home p #blink {
@@ -100,22 +105,20 @@ body #home p #blink {
   animation: 1.01s blink step-end infinite;
 }
 body #about,
-body #portfolio,
-body #contact {
+body #portfolio {
   align-items: center;
-  background-color: rgba(255, 253, 246, 0.952);
+  background-color: rgba(240, 234, 222, 0.935);
   border-radius: 20px;
   display: flex;
   flex-flow: column nowrap;
   margin: 0 auto;
   height: max-content;
-  width: 80%;
 }
 body #about h2,
-body #portfolio h2,
-body #contact h2 {
+body #portfolio h2 {
   align-self: center;
   color: rgb(49, 59, 45);
+  font-family: "Averia Libre";
   font-size: 30px;
   padding: 0.4em 0;
   text-align: center;
@@ -123,143 +126,84 @@ body #contact h2 {
 }
 body #about {
   margin: 0 auto;
+  width: 80%;
 }
 body #about p {
-  color: rgb(75, 92, 69);
+  color: rgb(45, 55, 41);
+  font-size: 3vmax;
+  font-size: 2.5vmin;
+  line-height: 2;
   padding: 0 10% 3em;
   text-align: justify;
 }
 body #portfolio {
-  height: max-content;
-  width: 92%;
+  padding-bottom: 4em;
+  width: 70%;
 }
-body #portfolio .tab-container {
+body #portfolio #btn-container {
   display: flex;
-  flex: 1;
-  flex-flow: row nowrap;
-  height: max-content;
+  flex-flow: row wrap;
+  flex: 1 0;
+  justify-content: space-around;
   width: 90%;
-  margin: 2em 1em 1em 0;
 }
-body #portfolio .tab-container .tabs {
-  background-color: transparent;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 50em;
-  position: relative;
-  width: 100%;
-}
-body #portfolio .tab-container .tabs .tab {
-  display: flex;
-  flex: 0;
-  justify-content: flex-start;
-  float: left;
-  height: auto;
-  width: 12em;
-}
-body #portfolio .tab-container .tabs .tab .tab-switch {
-  display: none;
-}
-body #portfolio .tab-container .tabs .tab .tab-label {
-  align-items: center;
-  background: rgb(255, 255, 255);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgb(49, 59, 45);
+body #portfolio #btn-container button {
+  flex: 1 0 50%;
+  background-color: rgb(248, 246, 235);
+  border: 1px solid rgb(45, 55, 41);
+  border-radius: 5px;
+  margin: 1%;
+  max-width: 18em;
+  min-width: 14em;
+  padding: 16px 0;
   cursor: pointer;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-  height: 3em;
-  margin: 0 -10px 0 0;
-  padding: 0.8em;
-  top: 0;
-  transition: all 0.07s;
-  width: 100%;
+  color: rgb(49, 59, 45);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  transition: all 100ms;
 }
-body #portfolio .tab-container .tabs .tab .tab-label:hover {
-  background-color: rgb(240, 240, 240);
+body #portfolio #btn-container button:hover {
+  background-color: rgb(152, 173, 144);
 }
-body #portfolio .tab-container .tabs .tab .tab-content {
-  display: block;
-  position: absolute;
-  transform: translateX(12em);
-  z-index: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  transition: all 0.07s;
-  width: 82.5%;
-}
-body #portfolio .tab-container .tabs .tab .tab-content .pdf {
-  background-color: transparent;
-  border-radius: 4px;
-  height: 50em;
-  margin: -2em 0 0 0;
-  width: 100%;
-  border: none;
-}
-body #portfolio .tab-container .tabs .tab .tab-switch:checked + .tab-label {
-  background: rgb(235, 188, 9);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
-  transform: scale(1.1);
-  transition: all 0.05s;
-  z-index: 0;
-}
-body #portfolio .tab-container .tabs .tab .tab-switch:checked + label + .tab-content {
-  z-index: 1;
-  opacity: 1;
-  transition: all 0.05s;
-}
-body #portfolio .tab-container .tabs::after {
-  clear: both;
-}
-body #contact {
-  padding: 0 0 3em 0;
-}
-body #contact ul {
-  display: flex;
-  flex-flow: row nowrap;
-  list-style: none;
-  justify-content: space-between;
-  width: 80%;
-}
-body #contact ul li {
-  display: flex;
-  flex: auto;
+body #portfolio #btn-container button:active {
+  background-color: rgb(75, 92, 69);
+  border: 1px solid rgb(44, 53, 40);
+  color: rgb(248, 246, 235);
 }
 body footer {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(240, 234, 222);
   bottom: 0;
-  color: rgba(255, 255, 255, 0.89);
-  display: inline-flex;
+  color: rgb(75, 92, 69);
+  display: flex;
+  flex-flow: row wrap;
   flex: 1;
   gap: 0.5em;
   justify-content: center;
   padding: 2px 0;
-  margin: 0;
+  margin: auto;
+  height: max-content;
   width: 100%;
 }
 body footer p,
 body footer a {
-  color: rgba(255, 255, 255, 0.89);
-  font-size: 14px;
-}
-body footer a:hover {
-  color: rgb(255, 241, 134);
-  transition-duration: 250ms;
+  color: rgb(75, 92, 69);
+  font-size: 12px;
 }
 body footer img {
-  height: 24px;
+  min-height: 12px;
+  max-height: 20px;
   width: auto;
 }
 body footer img:hover {
   transform: scale(1.15);
   transition-duration: 250ms;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background-size: cover;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
